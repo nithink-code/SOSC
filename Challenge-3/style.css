@@ -1,0 +1,170 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f10, #413351); /* Dark gradient background */
+    color: #e2e8f0; /* Light text for dark background */
+}
+
+header {
+    background: linear-gradient(to right, #2e3541, #242b36); /* Darker header gradient */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #242a34, #4a5568);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color: #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 1s ease, rotate 0.3s ease;
+}
+
+.feature-item:nth-child(1):hover {
+    border: 3px solid red;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 0, 0, 0.3); /* Added inset shadow */
+    transform: rotate(-2deg);
+}
+
+.feature-item:nth-child(2):hover {
+    border: 3px solid green;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 255, 0, 0.3); /* Added inset shadow */
+    transform: rotate(2deg);
+}
+
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+    background: linear-gradient(135deg, #5a6578, #6b7280); 
+}
+.feature-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    fill: #a0aec0;
+    transition: fill 0.3s ease;
+}
+
+.feature-item:hover img {
+    fill: #f9fafb;
+}
+
+.feature-item span {
+    font-weight: 600;
+}
+
+#workout-form, #progress-display {
+    background-color: #2d3748; /* Dark form background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+#workout-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #cbd5e0;
+}
+
+#workout-form select,
+#workout-form input[type="text"],
+#workout-form input[type="number"],
+#workout-form input[type="date"] {
+    width: calc(100% - 12px);
+    padding: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+    background-color: #374151;
+    color: #e2e8f0;
+}
+
+#workout-form select {
+    appearance: none; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0aec0'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Add custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+#workout-form button {
+    background-color: #4a5568;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#workout-form button:hover {
+    background-color: #6b7280;
+}
+
+#progress-list li {
+    padding: 8px;
+    border-bottom: 1px solid #4a5568;
+}
+
+#progress-list li:last-child {
+    border-bottom: none;
+}
+
+footer {
+    background-color: #2d3748;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #a0aec0;
+    padding: 10px 15px;
+    border: 1px solid #a0aec0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer a:hover {
+    background-color: #a0aec0;
+    color: #2d3748;
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
